@@ -3,20 +3,27 @@ class Agenda {
         this.contactos = [];
         this.maxContactos = 10;
     }
+    modificarTamanioo() {
+        let tamanio = parseInt(prompt(" el tamanio de la agenda es de " + this.maxContactos + " ingrese el nuevo tamanio de la agenda"));
+        if (isNaN(tamanio) || tamanio <= 0) {
+            document.getElementById("conEspacioTexto").innerHTML = ("Ingrese un numero valido");
+        } else {
 
-    aniadirContacto(contacto) {
-        if (this.contactos.length >= this.maxContactos) {
-            document.getElementById("verTarea").innerHTML = ("La agenda está llena. No se puede agregar más contactos.");
-
-            return;
+            this.maxContactos = tamanio;
+            document.getElementById("verTarea").innerHTML = ("se cambio el tamaño");
         }
-        this.contactos.push(contacto);
 
-        document.getElementById("verTarea").innerHTML = ("Contacto ingresado con exito");
     }
+    aniadirContacto(contacto) {
+        if (this.buscarContacto(contacto.nombre)) {
 
-    existeContacto(contacto) {
-        return this.contactos.includes(contacto);
+            document.getElementById("verTarea").innerHTML = ("el contacto ya existe");
+        } else {
+            this.contactos.push(contacto);
+            document.getElementById("verTarea").innerHTML = ("Contacto ingresado con exito");
+
+        }
+
     }
 
     listarContactos() {
@@ -64,7 +71,7 @@ class Agenda {
             document.getElementById("crearC").style.display = "initial";
             document.getElementById("sinEspacio").style.display = "none";
             document.getElementById("conEspacio").style.display = "initial";
-            document.getElementById("conEspacioTexto").innerHTML = ("hay espacio en la agenda");
+            document.getElementById("conEspacioTexto").innerHTML = ("hay espacio en la agenda,queda " + (this.maxContactos - this.contactos.length) + " lugares");
         }
     }
 }
@@ -109,6 +116,19 @@ mostrarc.addEventListener('click', () => {
     nuevoContacto.agendaLlena();
     nuevoContacto.huecosLibres();
 });
+modificTamanio.addEventListener('click', () => {
+    nuevoContacto.modificarTamanioo();
+    nuevoContacto.agendaLlena();
+    nuevoContacto.huecosLibres();
+});
+buscarC.addEventListener('click', () => {
+    let nombre = prompt("ingrese el nombre del contacto a buscar");
+    let contactoEncontrado = nuevoContacto.buscarContacto(nombre);
+    if (contactoEncontrado) {
+        document.getElementById("verTarea").innerHTML = ("Encontramos: " + contactoEncontrado.nombre + " numero: " + contactoEncontrado.numero);
+    }
+});
+
 
 /*
  const agenda = new Agenda();
