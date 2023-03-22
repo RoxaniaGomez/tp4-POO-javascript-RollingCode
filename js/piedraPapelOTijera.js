@@ -30,7 +30,7 @@ let juego = {
             document.getElementById("papelAlgoritmo").style.display = "none";
             document.getElementById("piedraAlgoritmo").style.display = "none";
             document.getElementById("tijeraAlgoritmo").style.display = "initial";
-            return document.getElementById("demo2").innerHTML = ("ganaste");
+            return document.getElementById("resultadoVictoria").innerHTML = ("ganaste");
         }
 
 
