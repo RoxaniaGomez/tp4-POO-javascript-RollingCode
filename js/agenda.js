@@ -35,6 +35,7 @@ class Agenda {
             return contacto;
         } else {
             document.getElementById("verTarea").innerHTML = (`No se encontró ningún contacto con el nombre ${nombre}.`);
+            return "";
         }
     }
 
@@ -44,7 +45,7 @@ class Agenda {
             this.contactos.splice(index, 1);
             console.log("Se ha eliminado el contacto de la agenda.");
         } else {
-            console.log("El contacto no se encontró en la agenda.");
+            document.getElementById("verTarea").innerHTML = ("El contacto no se encontró en la agenda.");
         }
     }
 
@@ -80,9 +81,9 @@ crearC.addEventListener('click', () => {
 });
 modificarc.addEventListener('click', () => {
     let nombre = prompt('Ingrese el nombre del contacto que desea modificar:');
-
-    let contactoAeliminar = nuevoContacto.buscarContacto(nombre);
-    if (contactoAeliminar != Null) {
+    let contactoAeliminar = "";
+    contactoAeliminar = nuevoContacto.buscarContacto(nombre);
+    if (contactoAeliminar != "") {
         nuevoContacto.eliminarContacto(contactoAeliminar);
         nombre = prompt('Ingrese el nombre del contacto nuevo:');
         const numero = prompt('Ingrese el número del contacto nuevo:');
