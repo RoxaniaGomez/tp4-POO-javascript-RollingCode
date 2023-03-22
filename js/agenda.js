@@ -43,7 +43,7 @@ class Agenda {
         const index = this.contactos.indexOf(contacto);
         if (index !== -1) {
             this.contactos.splice(index, 1);
-            console.log("Se ha eliminado el contacto de la agenda.");
+            document.getElementById("verTarea").innerHTML = ("Se ha eliminado el contacto de la agenda.");
         } else {
             document.getElementById("verTarea").innerHTML = ("El contacto no se encontró en la agenda.");
         }
@@ -89,7 +89,7 @@ modificarc.addEventListener('click', () => {
         const numero = prompt('Ingrese el número del contacto nuevo:');
         let contacto = { nombre, numero };
         nuevoContacto.aniadirContacto(contacto);
-
+        document.getElementById("verTarea").innerHTML = ("El contacto se modifico con exito.");
         nuevoContacto.agendaLlena();
         nuevoContacto.huecosLibres();
     }
