@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica Javascript RollingCode</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body><!-- Nav tabs -->
+    <header class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container-fluid justify-content-center">
+            <p class="navbar-text text-center"> TP4 js funciones POO<br><b class="text-primary">RollingCode
+                    por Roxania Gomez</b> </p>
+        </div>
+    </header>
+    <main class="container-fluid">
+        <div class=" container ">
+            <h4 class="text-center bg-primary">punto 1 Auto</h4>
+            <p>Crea un objeto llamado auto que tenga algunas características como el color, marca, modelo
+                y si está
+                encendido o apagado. Crea los métodos necesarios para permitir encender y apagar el auto.
+            </p>
+            <button type="button" onclick="auto.mostrar()" class="btn btn-danger">ver caracteristicas del auto</button>
+            <script src="./js/tp1.js"></script>
+            <p id="demo1" class="text-dark"></p>
+            <button type="button" onclick="auto.encender()" id="botonEncender" class="btn btn-danger">encender</button>
+            <button type="button" onclick="auto.apagar()" id="botonApagar" class="btn btn-danger">apagar</button>
+            <img src="./img/boton-de-apagado.png" id="imgApagado" alt="mi auto apagado">
+            <img src="./img/boton-de-encendido.png" id="imgEncendido" alt="mi auto Encendido">
+            <p id="demo2" class="text-dark"></p>
+        </div>
+        <div class=" container ">
+            <h4 class="text-center bg-primary">punto 2 Cuenta bancaria </h4>
+            <p>Crea un objeto cuenta con las propiedades titular,saldo y los metodos ingresar(), extraer() e informar()
+            </p>
+            <script src="./js/p2.js"></script>
+            <button type="button" onclick="cuenta.ingresar()" class="btn btn-danger">ingresar</button>
+            <button type="button" onclick="cuenta.extraer()" class="btn btn-danger">extraer</button>
+            <button type="button" onclick="cuenta.informar()" class="btn btn-danger">ver saldo</button>
+            <p id="demo3" class="text-dark">
+        </div>
+        <div class=" container ">
+            <h4 class="text-center bg-primary">punto 3 rectangulo </h4>
+            <p>Escribe una clase que permita crear distintos objetos “rectángulos”, con las propiedades de alto y ancho,
+                mas los métodos necesarios para modificar y mostrar sus propiedades, calcular el perímetro y el área
+            </p>
+            <form>
+                <label for="alto" class="p-1">Alto:</label>
+                <input type="number" id="alto" name="alto" required class="form-control">
+
+                <label for="ancho" class="p-1">Ancho:</label>
+                <input type="number" id="ancho" name="ancho" required class="form-control">
+
+                <button type="button" id="crear" class="btn btn-danger">Crear</button>
+                <button type="button" id="modificar" class="btn btn-danger" disabled>Modificar ultimo</button>
+                <button type="button" id="mostrar" disabled class="btn btn-danger">Mostrar ultimo</button>
+                <button type="button" id="mostrar-todos" disabled class="btn btn-danger">Mostrar todos</button>
+            </form>
+
+
+            <script src="./js/rectangulo.js"></script>
+
+
+            <p id="demo4" class="text-dark">
+        </div>
+        <div class=" container ">
+            <h4 class="text-center bg-primary">punto 4 productos </h4>
+            <p>Escribe una clase Producto para crear objetos.
+                Estos objetos, deben presentar las propiedades código,
+                nombre y precio, además del método imprime datos,
+                el cual escribe por pantalla los valores de sus propiedades.
+                Posteriormente, cree tres instancias de este objeto y guárdalas en un array.
+                Por último, utilice el método imprime datos para mostrar por pantalla los valores
+                de los tres objetos
+                instanciados.
+
+            </p>
+            <form id="formProductos">
+                <label for="codigo" class="p-1">Codigo:</label>
+                <input type="number" id="codigo" name="codigo" required class="form-control">
+                <label for="nombre" class="p-1">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required class="form-control">
+                <label for="precio" class="p-1">Precio:</label>
+                <input type="number" id="precio" name="precio" required class="form-control">
+                <button type="button" id="crearProductos" class="btn btn-danger">Ingresar producto</button>
+                <button type="button" id="mostrar-Productos" disabled class="btn btn-danger">Imprimir Datos</button>
+            </form>
+            <script src="./js/productos.js"></script>
+
+
+            <p id="demo5" class="text-dark">
+        </div>
+        <div class="container">
+            <h4 class="text-center bg-primary">punto 5 Generaciones </h4>
+            <p>Crea una clase llamada Persona que siga las siguientes condiciones:
+                Sus propiedades son: nombre, edad, DNI, sexo (H hombre, M mujer),
+                peso y altura, año de nacimiento. Si
+                quieres añadir alguna propiedad extra puedes hacerlo.
+                Los métodos que se debe poder utilizar son:
+                mostrarGeneracion: este método debe mostrar un mensaje indicando a qué generación pertenece la persona
+                creada y cual es el rasgo característico de esta generación.
+            </p>
+            <form id="miFormulario">
+                <label for="nombreg">Nombre:</label>
+                <input type="text" id="nombreg" name="nombreg" class="form-control">
+                <label for="edadg">Edad:</label>
+                <input type="number" id="edadg" name="edadg" class="form-control">
+                <label for="dnig">Dni:</label>
+                <input type="number" id="dnig" name="dnig" class="form-control">
+                <label for="pesog">Peso:</label>
+                <input type="number" id="pesog" name="pesog" class="form-control">
+                <label for="alturag">Altura:</label>
+                <input type="number" id="alturag" name="alturag" class="form-control">
+                <label for="aniog">Año de nacimiento:</label>
+                <input type="number" id="aniog" name="aniog" class="form-control">
+                <br>
+                <button type="button" id="botonGeneracion" class="btn btn-danger ">Cargar Datos</button>
+
+            </form>
+            <script src="./js/generaciones.js"></script>
+            <BR>
+        </div>
+
+        <div class="container">
+            <h4 class="text-center bg-primary">punto 6 LIBROS </h4>
+            <p>rear una clase Libro que contenga al menos las siguientes propiedades:</p>
+            <ul>
+                <li>ISBN</li>
+                <li>Título</li>
+                <li>Autor</li>
+                <li>Número de páginas</li>
+            </ul>
+            <P> Crear sus respectivos métodos get y set correspondientes para cada propiedad. Crear el método
+                mostrarLibro() para mostrar la información relativa al libro con el siguiente formato: <br><b> “El libro
+                    xxx
+                    con ISBN xxx creado por el autor xxx tiene páginas xxx”</b><br>Crear al menos 2 objetos libros y
+                utilizar el método mostrarLibro();
+                Por último, indicar cuál de los 2 objetos “libros” tiene más páginas
+            </p>
+            <form id="formLibros">
+                <button type="button" id="verLibros" class="btn btn-danger">ver libros disponibles</button>
+            </form>
+            <p id="mostrarLibros" class="text-dark"></p>
+            <p id="masPaginas" class="text-dark"></p>
+
+            <script src="./js/libros.js"></script>
+        </div>
+        <div class="container">
+            <h4 class="text-center bg-primary">punto 7 Agenda </h4>
+            <p>
+                Nos piden realizar una agenda telefónica de contactos.
+
+                Un contacto está definido por un nombre y un teléfono. Se considera que un contacto es igual a otro
+                cuando sus nombres son iguales.
+
+                Una agenda de contactos está formada por un conjunto de contactos. Se podrá crear de dos formas,
+                indicando nosotros el tamaño o con un tamaño por defecto (10).
+
+            </p>
+
+            <button type="button" id="crearC" class="btn btn-danger">añadir Contacto</button>
+            <button type="button" id="modificarc" class="btn btn-danger">Modificar Contacto</button>
+            <button type="button" id="eliminarc" class="btn btn-danger">Eliminar Contacto</button>
+            <button type="button" id="mostrarc" class="btn btn-danger">Mostrar todos</button>
+            <br>
+            <!-- <button id="btn-agregar" class="btn btn-danger">Agregar contacto</button> -->
+            <img src="./img/conEspacio.png" id="conEspacio" alt="agenda con espacio">
+            <img src="./img/sinEspacio.png" id="sinEspacio" alt="agenda sin espacio">
+            <p id="conEspacioTexto"></p>
+            <p id="verTarea"></p>
+
+            <script src="./js/agenda.js"></script>
+
+        </div>
+        <div class=" container ">
+            <h2 class="text-center bg-danger">Extras!!!</h2>
+            <h4 class="text-center bg-primary">piedra papel o tijera</h4>
+            <p class="text-center">juga contra el algoritmo
+            </p>
+            <p class="bg-danger text-center w-25">elegi aqui abajo:</p>
+            <div class="container text-center">
+
+                <div class="row">
+                    <div class="col">
+                        <button type="button" onclick="juego.piedra()" class="btn btn-light">
+                            <img src="./img/piedra.png" alt="piedra"></button>
+                        <button type="button" onclick="juego.papel()" class="btn btn-light">
+                            <img src="./img/papel.png" alt="papel"></button>
+                        <button type="button" onclick="juego.tijera()" class="btn btn-light">
+                            <img src="./img/tijera.png" alt="tijera"></button>
+                    </div>
+                    <div class="col ">
+                        <br><br>
+                        <img src="./img/piedra.png" alt="piedra" id="piedraUsuario">
+                        <img src="./img/papel.png" alt="papel" id="papelUsuario">
+                        <img src="./img/tijera.png" alt="tijera" id="tijeraUsuario">
+
+
+
+                        <img src="./img/piedra.png" alt="piedra" id="piedraAlgoritmo">
+                        <img src="./img/papel.png" alt="papel" id="papelAlgoritmo">
+                        <img src="./img/tijera.png" alt="tijera" id="tijeraAlgoritmo">
+
+                    </div>
+                    <div class="col">
+                        <button type="button" disabled class="btn btn-light">
+                            <img src="./img/piedra.png" alt="piedra">
+                        </button>
+                        <button type="button" disabled class="btn btn-light">
+                            <img src="./img/papel.png" alt="papel">
+                        </button>
+                        <button type="button" disabled class="btn btn-light">
+                            <img src="./img/tijera.png" alt="tijera">
+                        </button>
+
+                    </div>
+                </div>
+                <p id="resultadoVictoria" class="h1 text-bg-danger"></p>
+                <script src="./js/piedraPapelOTijera.js"></script>
+            </div>
+
+        </div>
+
+
+    </main>
+    <footer class="navbar bg-dark navbar-dark">
+        <div class="container-fluid justify-content-end">
+            <a href="https://github.com/RoxaniaGomez" target="_blank" rel="noopener noreferrer" title="github">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100px" fill="currentColor" class="bi bi-github"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
